@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">ApgarApp</string>
+    <string name="apgarapp">ApgarApp</string>
+    <string name="activity">Activity</string>
+    <string name="active">Active</string>
+    <string name="some">Some</string>
+    <string name="limp">Limp</string>
+    <string name="pulse">Pulse</string>
+    <string name="bpm_100"><![CDATA[BPM>100]]></string>
+    <string name="bpm__100"><![CDATA[BPM<100]]></string>
+    <string name="absent">Absent</string>
+    <string name="grimace">Grimace</string>
+    <string name="sneeze">Sneeze</string>
+    <string name="grimaceGrimace">Grimace</string>
+    <string name="none">None</string>
+    <string name="appearance">Appearance</string>
+    <string name="all_pink">All Pink</string>
+    <string name="pink_body">Pink body</string>
+    <string name="blue">Blue</string>
+    <string name="respirations">Respirations</string>
+    <string name="good_crying">Good/crying</string>
+    <string name="irregular_slow">Irregular/slow</string>
+    <string name="absentRespiratory">Absent</string>
 </resources>

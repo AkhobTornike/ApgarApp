@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,14 +25,15 @@ public class Apgar1 extends AppCompatActivity {
 
         // Find the TextView in the layout
         TextView babyNameTextView = findViewById(R.id.babyNameTextView);
+
         // Find the timer TextView
         timerTextView = findViewById(R.id.timerTextView);
 
         // Set the baby name in the TextView
         babyNameTextView.setText(babyName);
-
-        startTimer(); // Start the timer
     }
+
+
 
     private void startTimer() {
         // Define the total duration of the time (in milliseconds)
