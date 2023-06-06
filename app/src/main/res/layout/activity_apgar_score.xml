@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ApgarScore">
+
+<!--  Header  -->
+    <!-- AppName   -->
+    <TextView
+        android:id="@+id/Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/app_name"
+        android:textColor="#4E1077"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="VisualLintOverlap" />
+    <!-- BabyName -->
+    <TextView
+        android:id="@+id/babyName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <!-- Timer -->
+    <TextView
+        android:id="@+id/timerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--  Body  -->
+    <!-- Heart Rate -->
+    <LinearLayout
+        android:id="@+id/HeartRate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/Name"
+        android:orientation="vertical"
+        android:gravity="center"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/heart_rate"
+            android:gravity="center"
+            android:textSize="26sp"/>
+
+        <RadioGroup
+            android:id="@+id/HeartRateRadios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <RadioButton
+                android:id="@+id/Absent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:gravity="center"
+                android:text="@string/absent"
+                tools:ignore="VisualLintButtonSize,DuplicateSpeakableTextCheck" />
+
+            <RadioButton
+                android:id="@+id/Less100"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:gravity="center"
+                android:text="@string/_100"
+                tools:ignore="VisualLintButtonSize,DuplicateSpeakableTextCheck" />
+
+            <RadioButton
+                android:id="@+id/More100"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:gravity="center"
+                android:text="@string/_100_"
+                tools:ignore="VisualLintButtonSize,DuplicateSpeakableTextCheck" />
+        </RadioGroup>
+    </LinearLayout>
+    <!-- Respiratory -->
+    <LinearLayout
+        android:id="@+id/Respiratory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/HeartRate"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/respiratory"
+            android:textSize="26sp" />
+
+        <RadioGroup
+            android:id="@+id/RespiratoryRadios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/NonBreathing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:gravity="center"
+                android:text="@string/non_breathing"
+                tools:ignore="VisualLintButtonSize,DuplicateClickableBoundsCheck" />
+
+            <RadioButton
+                android:id="@+id/WeakBreathing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:gravity="center"
+                android:text="@string/_100"
+                tools:ignore="VisualLintButtonSize,DuplicateClickableBoundsCheck" />
+
+            <RadioButton
+                android:id="@+id/StrongBreathing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:gravity="center"
+                android:text="@string/_100_"
+                tools:ignore="VisualLintButtonSize,DuplicateClickableBoundsCheck" />
+        </RadioGroup>
+    </LinearLayout>
+    <!-- Muscle Tone -->
+    <LinearLayout
+        android:id="@+id/MuscleTone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/Respiratory"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/muscle_tone"
+            android:textSize="26sp" />
+
+        <RadioGroup
+            android:id="@+id/MuscleToneRadios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/Limp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:gravity="center"
+                android:text="@string/limp"
+                tools:ignore="VisualLintButtonSize" />
+
+            <RadioButton
+                android:id="@+id/Some"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:gravity="center"
+                android:text="@string/some"
+                tools:ignore="VisualLintButtonSize" />
+
+            <RadioButton
+                android:id="@+id/Active"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:gravity="center"
+                android:text="@string/active"
+                tools:ignore="VisualLintButtonSize,DuplicateSpeakableTextCheck" />
+        </RadioGroup>
+    </LinearLayout>
+    <!-- Reflex Irritability -->
+    <LinearLayout
+        android:id="@+id/Reflex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/MuscleTone"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/reflex"
+            android:textSize="26sp" />
+
+        <RadioGroup
+            android:id="@+id/ReflexRadios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/Non"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:gravity="center"
+                android:text="@string/non"
+                tools:ignore="VisualLintButtonSize" />
+
+            <RadioButton
+                android:id="@+id/Grimace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:gravity="center"
+                android:text="@string/grimace"
+                tools:ignore="VisualLintButtonSize" />
+
+            <RadioButton
+                android:id="@+id/ActiveWithdrawal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:gravity="center"
+                android:text="@string/active"
+                tools:ignore="VisualLintButtonSize" />
+        </RadioGroup>
+    </LinearLayout>
+    <!-- Color -->
+    <LinearLayout
+        android:id="@+id/Color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/Reflex"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/color"
+            android:textSize="26sp" />
+
+        <RadioGroup
+            android:id="@+id/ColorRadios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/Pale"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:gravity="center"
+                android:text="@string/pale"
+                tools:ignore="VisualLintButtonSize" />
+
+            <RadioButton
+                android:id="@+id/Blue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:gravity="center"
+                android:text="@string/blue"
+                tools:ignore="VisualLintButtonSize" />
+
+            <RadioButton
+                android:id="@+id/Pink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:gravity="center"
+                android:text="@string/pink"
+                tools:ignore="VisualLintButtonSize" />
+        </RadioGroup>
+    </LinearLayout>
+
+<!--  Count Apgar Score  -->
+
+    <LinearLayout
+        android:id="@+id/ApgarScoreCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Color"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/CalculateButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/calculateRadio"
+            app:layout_constraintBottom_toTopOf="@+id/ScoreTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints,VisualLintButtonSize" />
+
+        <TextView
+            android:id="@+id/ScoreTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/scoreRadio"
+            android:textSize="24sp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+<!--
+    private RadioButton Pale;
+    private RadioButton Blue;
+    private RadioButton Pink;
+    -->

@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:text="ApgarApp"
+        android:text="@string/app_name"
         android:textColor="#4E1077"
         android:textSize="34sp"
         app:layout_constraintTop_toTopOf="parent"
@@ -27,7 +27,8 @@
         app:layout_constraintTop_toBottomOf="@id/Name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="VisualLintBounds">
 
 
     </View>
@@ -45,9 +46,12 @@
             android:id="@+id/babyName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Name : "
+            android:autofillHints=""
+            android:hint="@string/baby_name"
             android:minHeight="48dp"
-            android:padding="8dp"/>
+            android:padding="8dp"
+            android:textColorHint="#263238"
+            tools:ignore="TextFields,TextContrastCheck,VisualLintTextFieldSize" />
 
     </LinearLayout>
 
@@ -66,9 +70,12 @@
             android:id="@+id/babyID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ID : "
+            android:autofillHints=""
+            android:hint="@string/baby_id"
             android:minHeight="48dp"
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:textColorHint="#263238"
+            tools:ignore="TextFields,TextContrastCheck,VisualLintTextFieldSize" />
     </LinearLayout>
 
     <LinearLayout
@@ -86,9 +93,12 @@
             android:id="@+id/bornDateInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Date : DD/MM/YYYY/HH/MM/SS"
+            android:autofillHints=""
+            android:hint="@string/date"
             android:minHeight="48dp"
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:textColorHint="#4E342E"
+            tools:ignore="TextFields,VisualLintTextFieldSize" />
 
     </LinearLayout>
 
@@ -96,15 +106,15 @@
         android:id="@+id/saveButton"
         android:layout_width="136dp"
         android:layout_height="57dp"
-        android:onClick="onSaveButtonCLicked"
-        android:text="Save"
+        android:onClick=""
+        android:text="@string/save_button"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bornDateBox"
         app:layout_constraintVertical_bias="0.526"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints,OnClick" />
 
     <TextView
         android:id="@+id/userInfoTextView"

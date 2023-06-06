@@ -1,24 +1,29 @@
 <resources>
     <string name="app_name">ApgarApp</string>
-    <string name="apgarapp">ApgarApp</string>
-    <string name="activity">Activity</string>
-    <string name="active">Active</string>
-    <string name="some">Some</string>
-    <string name="limp">Limp</string>
-    <string name="pulse">Pulse</string>
-    <string name="bpm_100"><![CDATA[BPM>100]]></string>
-    <string name="bpm__100"><![CDATA[BPM<100]]></string>
+    <string name="heart_rate">Heart Rate</string>
     <string name="absent">Absent</string>
+    <string name="_100"><![CDATA[<=100]]></string>
+    <string name="_100_"><![CDATA[>=100]]></string>
+    <string name="respiratory">Respiratory</string>
+    <string name="non_breathing">Not Breathing</string>
+    <string name="weak_breathing">Weak Breathing</string>
+    <string name="strong_breathing">Strong Breathing</string>
+    <string name="muscle_tone">Muscle Tone</string>
+    <string name="limp">Limp</string>
+    <string name="some">Some</string>
+    <string name="active">Active</string>
+    <string name="reflex">Reflex</string>
+    <string name="non">No response</string>
     <string name="grimace">Grimace</string>
-    <string name="sneeze">Sneeze</string>
-    <string name="grimaceGrimace">Grimace</string>
-    <string name="none">None</string>
-    <string name="appearance">Appearance</string>
-    <string name="all_pink">All Pink</string>
-    <string name="pink_body">Pink body</string>
-    <string name="blue">Blue</string>
-    <string name="respirations">Respirations</string>
-    <string name="good_crying">Good/crying</string>
-    <string name="irregular_slow">Irregular/slow</string>
-    <string name="absentRespiratory">Absent</string>
+    <string name="color">Color</string>
+    <string name="pale">Bluish-Gray</string>
+    <string name="blue">Pink-Blue</string>
+    <string name="pink">Completely Pink</string>
+    <string name="calculateRadio">calculate</string>
+    <string name="scoreRadio">score</string>
+    <string name="baby_name">Name :</string>
+    <string name="baby_id">ID :</string>
+    <string name="date">Date : DD/MM/YYYY/HH/MM/SS</string>
+    <string name="save_button">Save</string>
+    <string name="create_new">Create New</string>
 </resources>

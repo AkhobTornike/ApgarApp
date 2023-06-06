@@ -1,12 +1,10 @@
 package com.example.apgarapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-
-import android.os.Bundle;
 import android.content.Intent;
-import android.view.View;
+import android.os.Bundle;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,12 +14,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button createNewButton = findViewById(R.id.btn);
-        createNewButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CreateNew.class);
-                startActivity(intent);
-            }
+        createNewButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, CreateNew.class);
+            startActivity(intent);
         });
     }
 }

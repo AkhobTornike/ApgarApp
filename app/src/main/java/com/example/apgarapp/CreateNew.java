@@ -2,34 +2,24 @@ package com.example.apgarapp;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.DatePicker;
-import android.widget.TextView;
-import android.widget.TimePicker;
-import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
-import java.util.ArrayList;
 
 public class CreateNew extends AppCompatActivity {
     private EditText bornDateInput;
     private EditText idInput;
     private EditText nameInput;
     private Calendar selectedDateTime;
-    private Button createNewButton;
-
-    // Array to store user information
-    private ArrayList<String> userInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +38,7 @@ public class CreateNew extends AppCompatActivity {
         selectedDateTime = Calendar.getInstance();
 
         // Initialize the user information array
-        userInfo = new ArrayList<>();
+        // Array to store user information
 
         // Set text change listener for name input field
         nameInput.addTextChangedListener(new TextWatcher() {
@@ -90,23 +80,21 @@ public class CreateNew extends AppCompatActivity {
 
         // Create function for save btn jump to next page and sent Data
         Button createNewButton = findViewById(R.id.saveButton);
-        createNewButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent =new Intent(CreateNew.this, Apgar1.class);
+        createNewButton.setOnClickListener(v -> {
+            Intent intent =new Intent(CreateNew.this, ApgarScore.class);
 
-                // Retrieve the values from the input fields
-                String name = nameInput.getText().toString();
-                String id = idInput.getText().toString();
-                String date = bornDateInput.getText().toString();
+            // Retrieve the values from the input fields
+            String name = nameInput.getText().toString();
+            String id = idInput.getText().toString();
+            String date = bornDateInput.getText().toString();
 
-                // Pass the user information as extras in the intent
-                intent.putExtra("name", name);
-                intent.putExtra("id", id);
-                intent.putExtra("date", date);
+            // Pass the user information as extras in the intent
+            intent.putExtra("name", name);
+            intent.putExtra("id", id);
+            intent.putExtra("date", date);
 
-                startActivity(intent);
-            }
+            startActivity(intent);
+
         });
     }
 
@@ -118,16 +106,13 @@ public class CreateNew extends AppCompatActivity {
 
         // Create a date picker dialog
         DatePickerDialog datePickerDialog = new DatePickerDialog(this,
-                new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                        selectedDateTime.set(Calendar.YEAR, year);
-                        selectedDateTime.set(Calendar.MONTH, monthOfYear);
-                        selectedDateTime.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                (view, year1, monthOfYear, dayOfMonth) -> {
+                    selectedDateTime.set(Calendar.YEAR, year1);
+                    selectedDateTime.set(Calendar.MONTH, monthOfYear);
+                    selectedDateTime.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
-                        // Show time picker dialog after selecting the date
-                        showTimePicker();
-                    }
+                    // Show time picker dialog after selecting the date
+                    showTimePicker();
                 }, year, month, day);
 
         // Show the date picker dialog
@@ -140,33 +125,23 @@ public class CreateNew extends AppCompatActivity {
 
         // Create a time picker dialog
         TimePickerDialog timePickerDialog = new TimePickerDialog(this,
-                new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        selectedDateTime.set(Calendar.HOUR_OF_DAY, hourOfDay);
-                        selectedDateTime.set(Calendar.MINUTE, minute);
-                        selectedDateTime.set(Calendar.SECOND, 0);
+                (view, hourOfDay, minute1) -> {
+                    selectedDateTime.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                    selectedDateTime.set(Calendar.MINUTE, minute1);
+                    selectedDateTime.set(Calendar.SECOND, 0);
 
-                        // Format the selected date and time
-                        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy/HH/mm/ss", Locale.getDefault());
-                        String selectedDateTimeString = sdf.format(selectedDateTime.getTime());
+                    // Format the selected date and time
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy/HH/mm/ss", Locale.getDefault());
+                    String selectedDateTimeString = sdf.format(selectedDateTime.getTime());
 
-                        // Set the formatted date and time in the input field
-                        bornDateInput.setText(selectedDateTimeString);
-                    }
+                    // Set the formatted date and time in the input field
+                    bornDateInput.setText(selectedDateTimeString);
                 }, hour, minute, true);
 
         // Show the time picker dialog
         timePickerDialog.show();
     }
 
-    private void validateNameInput(String name) {
-        if(!name.matches("[a-zA-Z]+")) {
-            nameInput.setError("Only letters are allowed");
-        } else {
-            nameInput.setError(null);
-        }
-    }
     private void validateIdInput(String id){
         if(id.length() != 11) {
             idInput.setError("ID should be exactly 9 digits");
