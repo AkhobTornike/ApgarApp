@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,11 @@ public class ApgarScore extends AppCompatActivity {
     // Declare the timer TextView
     private TextView timerTextView;
 
+    private RadioGroup HeartRateRadios;
+    private RadioGroup RespiratoryRadios;
+    private RadioGroup MuscleToneRadios;
+    private RadioGroup ReflexRadios;
+    private RadioGroup ColorRadios;
     private RadioButton Absent;
     private RadioButton Less100Radio;
     private RadioButton More100Radio;
@@ -54,10 +60,10 @@ public class ApgarScore extends AppCompatActivity {
         sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
 
         // Take info from user and print in TextView
-        String babyName = getIntent().getStringExtra("name");
+        String name = UserInfoManager.getInstance().getName();
         TextView babyNameTextView = findViewById(R.id.babyName);
 
-        babyNameTextView.setText(babyName);
+        babyNameTextView.setText(name);
 
         // Start timer after clicking Save in create_new page
         timerTextView = findViewById(R.id.timerTextView);
@@ -80,6 +86,12 @@ public class ApgarScore extends AppCompatActivity {
         Blue = findViewById(R.id.Blue);
         Pink = findViewById(R.id.Pink);
 
+        HeartRateRadios = findViewById(R.id.HeartRateRadios);
+        RespiratoryRadios = findViewById(R.id.RespiratoryRadios);
+        MuscleToneRadios = findViewById(R.id.MuscleToneRadios);
+        ReflexRadios = findViewById(R.id.ReflexRadios);
+        ColorRadios = findViewById(R.id.ColorRadios);
+
         restoreRadioSelections();
 
         Apgar1Score = findViewById(R.id.Apgar1Score);
@@ -91,8 +103,22 @@ public class ApgarScore extends AppCompatActivity {
         Button SaveButton = findViewById(R.id.SaveButton);
 
         SaveButton.setOnClickListener(v -> {
+            String heartRate = getSelectedRadioValue(HeartRateRadios);
+            String respiratory = getSelectedRadioValue(RespiratoryRadios);
+            String muscleTone = getSelectedRadioValue(MuscleToneRadios);
+            String reflex = getSelectedRadioValue(ReflexRadios);
+            String color = getSelectedRadioValue(ColorRadios);
+
+            Bundle bundle = new Bundle();
+            bundle.putString("heartRate", heartRate);
+            bundle.putString("respiratory", respiratory);
+            bundle.putString("muscleTone", muscleTone);
+            bundle.putString("reflex", reflex);
+            bundle.putString("color", color);
+
             if (isSaveEnabled) {
                 Intent intent = new Intent(ApgarScore.this, CheckBabyInfo.class);
+                intent.putExtras(bundle);
                 startActivity(intent);
             } else {
                 Toast.makeText(ApgarScore.this, "Please wait until fill 3th Apgar scores.", Toast.LENGTH_SHORT).show();
@@ -295,5 +321,14 @@ public class ApgarScore extends AppCompatActivity {
         Pale.setChecked(false);
         Blue.setChecked(false);
         Pink.setChecked(false);
+    }
+
+    private String getSelectedRadioValue(RadioGroup radioGroup) {
+        int selectedId = radioGroup.getCheckedRadioButtonId();
+        RadioButton radioButton = findViewById(selectedId);
+        if (radioButton != null) {
+            return radioButton.getText().toString();
+        }
+        return "";
     }
 }
