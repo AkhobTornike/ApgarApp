@@ -31,8 +31,8 @@ public class CheckBabyInfo extends AppCompatActivity {
         bornDateInput.setOnClickListener(v -> DateInputValidation.showDateTimePicker(CheckBabyInfo.this, bornDateInput));
 
 
-        Button createNewButton = findViewById(R.id.SaveButton);
-        createNewButton.setOnClickListener(v -> {
+        Button SaveButton = findViewById(R.id.SaveButton);
+        SaveButton.setOnClickListener(v -> {
             String name1 = nameInput.getText().toString().trim();
             String id1 = idInput.getText().toString().trim();
             String date1 = bornDateInput.getText().toString().trim();

@@ -78,9 +78,9 @@ public class CreateNew extends AppCompatActivity {
             UserInfoManager.getInstance().saveUserInfo(name, id, date);
 
             if (date.isEmpty()) {
-                startActivity(intent);
-            } else {
                 Toast.makeText(CreateNew.this, "Please fill Date field", Toast.LENGTH_SHORT).show();
+            } else {
+                startActivity(intent);
             }
         });
     }

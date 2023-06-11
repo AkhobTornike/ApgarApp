@@ -6,8 +6,8 @@
     <string name="_100_"><![CDATA[>=100]]></string>
     <string name="respiratory">Respiratory</string>
     <string name="non_breathing">Not Breathing</string>
-    <string name="weak_breathing">Weak Breathing</string>
-    <string name="strong_breathing">Strong Breathing</string>
+    <string name="irregular">Irregular</string>
+    <string name="good">Good</string>
     <string name="muscle_tone">Muscle Tone</string>
     <string name="limp">Limp</string>
     <string name="some">Some</string>
@@ -16,13 +16,21 @@
     <string name="non">No response</string>
     <string name="grimace">Grimace</string>
     <string name="color">Color</string>
-    <string name="pale">Bluish-Gray</string>
-    <string name="blue">Pink-Blue</string>
-    <string name="pink">Completely Pink</string>
+    <string name="pale">Pale</string>
+    <string name="blue">Blue</string>
+    <string name="pink">Pink</string>
     <string name="scoreRadio">score</string>
     <string name="baby_name">Name :</string>
     <string name="baby_id">ID :</string>
     <string name="date">Date : DD/MM/YYYY/HH/MM/SS</string>
     <string name="save_button">Save</string>
     <string name="create_new">Create New</string>
+    <string name="respiratory_result">Respiratory : </string>
+    <string name="muscletone_result">MuscleTone : </string>
+    <string name="reflex_result">Reflex : </string>
+    <string name="heartrate_result">HeartRate : </string>
+    <string name="color_result">Color : </string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
 </resources>

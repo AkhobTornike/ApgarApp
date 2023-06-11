@@ -2,12 +2,10 @@ package com.example.apgarapp;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.widget.Button;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,13 +15,13 @@ import java.util.Locale;
 
 public class ApgarScore extends AppCompatActivity {
     // Declare the timer TextView
-    private TextView timerTextView;
 
-    private RadioGroup HeartRateRadios;
-    private RadioGroup RespiratoryRadios;
-    private RadioGroup MuscleToneRadios;
-    private RadioGroup ReflexRadios;
-    private RadioGroup ColorRadios;
+    private TextView timerTextView;
+    private String heartRateRadios;
+    private String respiratoryRadios;
+    private String muscleToneRadios;
+    private String reflexRadios;
+    private String colorRadios;
     private RadioButton Absent;
     private RadioButton Less100Radio;
     private RadioButton More100Radio;
@@ -41,13 +39,9 @@ public class ApgarScore extends AppCompatActivity {
     private RadioButton Blue;
     private RadioButton Pink;
 
-    private static final String PREFS_NAME = "ApgarPrefs";
-    private static final String KEY_SCORE = "score";
-    private static final String KEY_RADIO_SELECTION = "radio_selection";
     private TextView Apgar1Score;
     private TextView Apgar2Score;
     private TextView Apgar3Score;
-    private SharedPreferences sharedPreferences;
     private int currentPhase = 1;
     private boolean isSaveEnabled = false;
 
@@ -57,7 +51,6 @@ public class ApgarScore extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apgar_score);
 
-        sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
 
         // Take info from user and print in TextView
         String name = UserInfoManager.getInstance().getName();
@@ -86,14 +79,6 @@ public class ApgarScore extends AppCompatActivity {
         Blue = findViewById(R.id.Blue);
         Pink = findViewById(R.id.Pink);
 
-        HeartRateRadios = findViewById(R.id.HeartRateRadios);
-        RespiratoryRadios = findViewById(R.id.RespiratoryRadios);
-        MuscleToneRadios = findViewById(R.id.MuscleToneRadios);
-        ReflexRadios = findViewById(R.id.ReflexRadios);
-        ColorRadios = findViewById(R.id.ColorRadios);
-
-        restoreRadioSelections();
-
         Apgar1Score = findViewById(R.id.Apgar1Score);
         Apgar2Score = findViewById(R.id.Apgar2Score);
         Apgar3Score = findViewById(R.id.Apgar3Score);
@@ -103,22 +88,9 @@ public class ApgarScore extends AppCompatActivity {
         Button SaveButton = findViewById(R.id.SaveButton);
 
         SaveButton.setOnClickListener(v -> {
-            String heartRate = getSelectedRadioValue(HeartRateRadios);
-            String respiratory = getSelectedRadioValue(RespiratoryRadios);
-            String muscleTone = getSelectedRadioValue(MuscleToneRadios);
-            String reflex = getSelectedRadioValue(ReflexRadios);
-            String color = getSelectedRadioValue(ColorRadios);
-
-            Bundle bundle = new Bundle();
-            bundle.putString("heartRate", heartRate);
-            bundle.putString("respiratory", respiratory);
-            bundle.putString("muscleTone", muscleTone);
-            bundle.putString("reflex", reflex);
-            bundle.putString("color", color);
 
             if (isSaveEnabled) {
                 Intent intent = new Intent(ApgarScore.this, CheckBabyInfo.class);
-                intent.putExtras(bundle);
                 startActivity(intent);
             } else {
                 Toast.makeText(ApgarScore.this, "Please wait until fill 3th Apgar scores.", Toast.LENGTH_SHORT).show();
@@ -145,100 +117,88 @@ public class ApgarScore extends AppCompatActivity {
         Pink.setOnClickListener(v -> calculateAndDisplayScore());
 
     }
-    private void restoreRadioSelections() {
-        int savedSelections = sharedPreferences.getInt(KEY_RADIO_SELECTION, -1);
-
-        if (savedSelections != -1) {
-            RadioButton selectedRadioButton  = findViewById(savedSelections);
-            selectedRadioButton.setChecked(true);
-        }
-    }
-    private void saveRadioSelection(int selectedId) {
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt(KEY_RADIO_SELECTION, selectedId);
-        editor.apply();
-    }
-    @Override
-    protected void onPause() {
-        super.onPause();
-        int selectedId = getSelectedRadioButtonId();
-        saveRadioSelection(selectedId);
-    }
-    private int getSelectedRadioButtonId() {
-        if (Absent.isChecked()) {
-            return R.id.Absent;
-        } else if (Less100Radio.isChecked()) {
-            return R.id.Less100;
-        } else if (More100Radio.isChecked()) {
-            return R.id.More100;
-        } else if (NonBreathing.isChecked()) {
-            return R.id.NonBreathing;
-        }else if (WeakBreathing.isChecked()) {
-            return R.id.WeakBreathing;
-        } else if (StrongBreathing.isChecked()) {
-            return R.id.StrongBreathing;
-        } else if (Limp.isChecked()) {
-            return R.id.Limp;
-        }else if (Some.isChecked()) {
-            return R.id.Some;
-        } else if (Active.isChecked()) {
-            return R.id.Active;
-        } else if (Non.isChecked()) {
-            return R.id.Non;
-        }else if (Grimace.isChecked()) {
-            return R.id.Grimace;
-        } else if (ActiveWithdrawal.isChecked()) {
-            return R.id.ActiveWithdrawal;
-        } else if (Pale.isChecked()) {
-            return R.id.Pale;
-        }else if (Blue.isChecked()) {
-            return R.id.Blue;
-        } else if (Pink.isChecked()) {
-            return R.id.Pink;
-        }
-        return -1;
-    }
     @SuppressLint("SetTextI18n")
     private void calculateAndDisplayScore() {
         int score = calculateScore();
         if (currentPhase == 1) {
             Apgar1Score.setText("Score: " + score);
+            UserApgarScore.getInstance().setHeartRatePhase1(heartRateRadios);
+            UserApgarScore.getInstance().setRespiratoryPhase1(respiratoryRadios);
+            UserApgarScore.getInstance().setMuscleTonePhase1(muscleToneRadios);
+            UserApgarScore.getInstance().setReflexPhase1(reflexRadios);
+            UserApgarScore.getInstance().setColorPhase1(colorRadios);
         } else if (currentPhase == 2) {
             Apgar2Score.setText("Score: " + score);
+            UserApgarScore.getInstance().setHeartRatePhase2(heartRateRadios);
+            UserApgarScore.getInstance().setRespiratoryPhase2(respiratoryRadios);
+            UserApgarScore.getInstance().setMuscleTonePhase2(muscleToneRadios);
+            UserApgarScore.getInstance().setReflexPhase2(reflexRadios);
+            UserApgarScore.getInstance().setColorPhase2(colorRadios);
         } else if (currentPhase == 3) {
             Apgar3Score.setText("Score: " + score);
+            UserApgarScore.getInstance().setHeartRatePhase3(heartRateRadios);
+            UserApgarScore.getInstance().setRespiratoryPhase3(respiratoryRadios);
+            UserApgarScore.getInstance().setMuscleTonePhase3(muscleToneRadios);
+            UserApgarScore.getInstance().setReflexPhase3(reflexRadios);
+            UserApgarScore.getInstance().setColorPhase3(colorRadios);
         }
+
     }
     private int calculateScore() {
         int score = 0;
+        if (Absent.isChecked()) {
+            heartRateRadios = "Absent";
+        }
         if (Less100Radio.isChecked()) {
+            heartRateRadios = "<100";
             score += 1;
         }
         if (More100Radio.isChecked()) {
+            heartRateRadios = ">100";
             score += 2;
         }
+        if (NonBreathing.isChecked()) {
+            respiratoryRadios = "NonBreathing";
+        }
         if (WeakBreathing.isChecked()) {
+            respiratoryRadios = "WeakBreathing";
             score += 1;
         }
         if (StrongBreathing.isChecked()) {
+            respiratoryRadios = "StrongBreathing";
             score += 2;
         }
+        if (Limp.isChecked()) {
+            muscleToneRadios = "Limp";
+        }
         if (Some.isChecked()) {
+            muscleToneRadios = "Some";
             score += 1;
         }
         if (Active.isChecked()) {
+            muscleToneRadios = "Active";
             score += 2;
         }
+        if (Non.isChecked()) {
+            reflexRadios = "Non";
+        }
         if (Grimace.isChecked()) {
+            reflexRadios = "Grimace";
             score += 1;
         }
         if (ActiveWithdrawal.isChecked()) {
+            reflexRadios = "Active";
             score += 2;
         }
+        if (Pale.isChecked()) {
+            colorRadios = "Pale";
+        }
         if (Blue.isChecked()) {
+            colorRadios = "Blue";
             score += 1;
         }
         if (Pink.isChecked()) {
+            colorRadios = "Pink";
             score += 2;
         }
         return score;
@@ -321,14 +281,5 @@ public class ApgarScore extends AppCompatActivity {
         Pale.setChecked(false);
         Blue.setChecked(false);
         Pink.setChecked(false);
-    }
-
-    private String getSelectedRadioValue(RadioGroup radioGroup) {
-        int selectedId = radioGroup.getCheckedRadioButtonId();
-        RadioButton radioButton = findViewById(selectedId);
-        if (radioButton != null) {
-            return radioButton.getText().toString();
-        }
-        return "";
     }
 }

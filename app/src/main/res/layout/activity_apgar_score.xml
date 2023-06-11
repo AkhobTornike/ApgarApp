@@ -138,7 +138,7 @@
                 android:layout_weight="1"
                 android:checked="false"
                 android:gravity="center"
-                android:text="@string/_100"
+                android:text="@string/irregular"
                 tools:ignore="VisualLintButtonSize,DuplicateClickableBoundsCheck" />
 
             <RadioButton
@@ -148,7 +148,7 @@
                 android:layout_weight="1"
                 android:checked="false"
                 android:gravity="center"
-                android:text="@string/_100_"
+                android:text="@string/good"
                 tools:ignore="VisualLintButtonSize,DuplicateClickableBoundsCheck" />
         </RadioGroup>
     </LinearLayout>

@@ -35,5 +35,4 @@ public class UserInfoManager {
         return date;
     }
 
-
 }

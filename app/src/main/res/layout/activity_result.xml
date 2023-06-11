@@ -6,75 +6,337 @@
     android:layout_height="match_parent"
     tools:context=".Result">
 
-    <TextView
-        android:id="@+id/Name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/app_name"
-        android:textColor="#4E1077"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="VisualLintOverlap" />
+    <LinearLayout
+        android:id="@+id/body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/AppName"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.06"
+            android:gravity="center_horizontal"
+            tools:ignore="MissingConstraints,RtlHardcoded,Suspicious0dp,TextSizeCheck">
+                    <TextView
+                        android:id="@+id/Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="@string/app_name"
+                        android:textColor="#4E1077"
+                        android:textSize="34sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="VisualLintOverlap" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/Headers"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.07"
+            android:orientation="horizontal"
+            tools:ignore="Suspicious0dp">
 
-    <TextView
-        android:id="@+id/muscleToneTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/respiratoryTextView"
-        tools:ignore="MissingConstraints" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4"
+                android:text="@string/app_name"
+                android:fontFamily="sans-serif-black"
+                android:textColor="#4E1077"
+                android:textSize="26sp"
+                android:gravity="center"
+                tools:ignore="HardcodedText,NestedWeights" />
 
-    <TextView
-        android:id="@+id/colorTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reflexTextView"
-        app:layout_constraintVertical_bias="0.032"
-        tools:ignore="MissingConstraints" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:text="@string/_1"
+                android:fontFamily="sans-serif-black"
+                android:textColor="#4E1077"
+                android:textSize="26sp"
+                android:gravity="center"/>
 
-    <TextView
-        android:id="@+id/heartRateTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Name"
-        tools:ignore="MissingConstraints" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:text="@string/_2"
+                android:fontFamily="sans-serif-black"
+                android:textColor="#4E1077"
+                android:textSize="26sp"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:text="@string/_3"
+                android:fontFamily="sans-serif-black"
+                android:textColor="#4E1077"
+                android:textSize="26sp"
+                android:gravity="center"/>
 
-    <TextView
-        android:id="@+id/respiratoryTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heartRateTextView"
-        tools:ignore="MissingConstraints" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/Scores"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8"
+            android:orientation="horizontal"
+            tools:ignore="Suspicious0dp"
+            android:baselineAligned="false">
+            <LinearLayout
+                android:id="@+id/Values"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4"
+                android:gravity="left"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:ignore="MissingConstraints,NestedWeights,RtlHardcoded,TextSizeCheck">
+                <TextView
+                    android:id="@+id/Respiratory"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/respiratory_result"
+                    android:textColor="#4E1077"
+                    android:textSize="26sp"
+                    tools:ignore="NestedWeights,VisualLintOverlap" />
+                <TextView
+                    android:id="@+id/MuscleTone"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/muscletone_result"
+                    android:textColor="#4E1077"
+                    android:textSize="26sp"
+                    tools:ignore="VisualLintOverlap" />
+                <TextView
+                     android:id="@+id/Reflex"
+                     android:layout_width="match_parent"
+                     android:layout_height="0dp"
+                     android:layout_marginBottom="8dp"
+                     android:layout_weight="1"
+                     android:fontFamily="sans-serif-black"
+                     android:text="@string/reflex_result"
+                     android:textColor="#4E1077"
+                     android:textSize="26sp"
+                     tools:ignore="VisualLintOverlap" />
+                <TextView
+                    android:id="@+id/HeartRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/heartrate_result"
+                    android:textColor="#4E1077"
+                    android:textSize="26sp"
+                    tools:ignore="VisualLintOverlap" />
+                <TextView
+                    android:id="@+id/Color"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/color_result"
+                    android:textColor="#4E1077"
+                    android:textSize="26sp"
+                    tools:ignore="VisualLintOverlap" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/Score1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:gravity="left"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:ignore="MissingConstraints,NestedWeights,RtlHardcoded,TextSizeCheck">
+                <TextView
+                    android:id="@+id/HeartRateScore1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#4E1077"
+                    android:textSize="16sp"
+                    tools:ignore="VisualLintOverlap, MissingConstraints" />
+                <TextView
+                    android:id="@+id/RespiratoryScore1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#4E1077"
+                    android:textSize="16sp"
+                    tools:ignore="NestedWeights,VisualLintOverlap, MissingConstraints" />
+                <TextView
+                    android:id="@+id/MuscleToneScore1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#4E1077"
+                    android:textSize="16sp"
+                    tools:ignore="VisualLintOverlap, MissingConstraints" />
+                <TextView
+                    android:id="@+id/ReflexScore1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#4E1077"
+                    android:textSize="16sp"
+                    tools:ignore="VisualLintOverlap, MissingConstraints" />
+                <TextView
+                    android:id="@+id/ColorScore1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#4E1077"
+                    android:textSize="16sp"
+                    tools:ignore="VisualLintOverlap, MissingConstraints" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/Score2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:gravity="left"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:ignore="MissingConstraints,NestedWeights,RtlHardcoded,TextSizeCheck">
+                <TextView
+                    android:id="@+id/RespiratoryScore2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#4E1077"
+                    android:textSize="16sp"
+                    tools:ignore="NestedWeights,VisualLintOverlap, MissingConstraints" />
+                <TextView
+                    android:id="@+id/MuscleToneScore2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#4E1077"
+                    android:textSize="16sp"
+                    tools:ignore="VisualLintOverlap, MissingConstraints" />
+                <TextView
+                    android:id="@+id/ReflexScore2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#4E1077"
+                    android:textSize="16sp"
+                    tools:ignore="VisualLintOverlap, MissingConstraints" />
 
-    <TextView
-        android:id="@+id/reflexTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/muscleToneTextView"
-        tools:ignore="MissingConstraints" />
+                <TextView
+                    android:id="@+id/HeartRateScore2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#4E1077"
+                    android:textSize="16sp"
+                    tools:ignore="VisualLintOverlap, MissingConstraints" />
 
+                <TextView
+                    android:id="@+id/ColorScore2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#4E1077"
+                    android:textSize="16sp"
+                    tools:ignore="VisualLintOverlap, MissingConstraints" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/Score3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:gravity="left"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:ignore="MissingConstraints,NestedWeights,RtlHardcoded,TextSizeCheck">
+                <TextView
+                    android:id="@+id/RespiratoryScore3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#4E1077"
+                    android:textSize="16sp"
+                    tools:ignore="NestedWeights,VisualLintOverlap, MissingConstraints" />
+                <TextView
+                    android:id="@+id/MuscleToneScore3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#4E1077"
+                    android:textSize="16sp"
+                    tools:ignore="VisualLintOverlap, MissingConstraints" />
+                <TextView
+                    android:id="@+id/ReflexScore3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#4E1077"
+                    android:textSize="16sp"
+                    tools:ignore="VisualLintOverlap, MissingConstraints" />
 
+                <TextView
+                    android:id="@+id/HeartRateScore3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#4E1077"
+                    android:textSize="16sp"
+                    tools:ignore="VisualLintOverlap, MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/ColorScore3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#4E1077"
+                    android:textSize="16sp"
+                    tools:ignore="VisualLintOverlap, MissingConstraints" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
