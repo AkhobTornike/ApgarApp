@@ -53,7 +53,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.4"
-                    android:background="@drawable/border_no_right"
+                    android:background="@drawable/border"
                     android:orientation="vertical"
                     tools:ignore="NestedWeights,UselessParent">
 
@@ -62,7 +62,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="0.3"
                         android:fontFamily="sans-serif-black"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:gravity="left|center"
                         android:text="@string/phase_Result"
                         android:textColor="#4E1077"
@@ -74,7 +74,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="0.3"
                         android:fontFamily="sans-serif-black"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:gravity="left|center"
                         android:text="@string/score_result"
                         android:textColor="#4E1077"
@@ -86,7 +86,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="0.3"
                         android:fontFamily="sans-serif-black"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:gravity="left|center"
                         android:text="@string/review_result"
                         android:textColor="#4E1077"
@@ -99,7 +99,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
                     android:orientation="vertical"
-                    android:background="@drawable/border_no_right"
+                    android:background="@drawable/border"
                     tools:ignore="NestedWeights,UselessParent">
 
                     <TextView
@@ -107,7 +107,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="0.3"
                         android:fontFamily="sans-serif-black"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:gravity="center"
                         android:text="@string/_1"
                         android:textColor="#4E1077"
@@ -119,7 +119,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="0.3"
                         android:fontFamily="sans-serif-black"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:gravity="center"
                         android:textColor="#4E1077"
                         android:textSize="16sp" />
@@ -130,7 +130,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="0.3"
                         android:fontFamily="sans-serif-black"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:gravity="center"
                         android:textColor="#4E1077"
                         android:textSize="16sp" />
@@ -140,7 +140,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
-                    android:background="@drawable/border_no_right"
+                    android:background="@drawable/border"
                     android:orientation="vertical"
                     tools:ignore="NestedWeights,UselessParent">
 
@@ -149,7 +149,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="0.3"
                         android:fontFamily="sans-serif-black"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:gravity="center"
                         android:text="@string/_2"
                         android:textColor="#4E1077"
@@ -161,7 +161,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="0.3"
                         android:fontFamily="sans-serif-black"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:gravity="center"
                         android:textColor="#4E1077"
                         android:textSize="16sp" />
@@ -172,7 +172,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="0.3"
                         android:fontFamily="sans-serif-black"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:gravity="center"
                         android:textColor="#4E1077"
                         android:textSize="16sp" />
@@ -182,7 +182,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
-                    android:background="@drawable/border_no_right"
+                    android:background="@drawable/border"
                     android:orientation="vertical"
                     tools:ignore="NestedWeights,UselessParent">
 
@@ -191,7 +191,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="0.3"
                         android:fontFamily="sans-serif-black"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:gravity="center"
                         android:text="@string/_3"
                         android:textColor="#4E1077"
@@ -203,7 +203,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="0.3"
                         android:fontFamily="sans-serif-black"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:gravity="center"
                         android:textColor="#4E1077"
                         android:textSize="16sp" />
@@ -214,7 +214,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="0.3"
                         android:fontFamily="sans-serif-black"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:gravity="center"
                         android:textColor="#4E1077"
                         android:textSize="16sp" />
@@ -249,7 +249,7 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-black"
                         android:gravity="left|center"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:text="@string/respiratory_result"
                         android:textColor="#4E1077"
                         android:textSize="26sp"
@@ -263,7 +263,7 @@
                         android:layout_weight="1"
                         android:gravity="left|center"
                         android:fontFamily="sans-serif-black"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:text="@string/muscletone_result"
                         android:textColor="#4E1077"
                         android:textSize="26sp"
@@ -277,7 +277,7 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-black"
                         android:gravity="left|center"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:text="@string/reflex_result"
                         android:textColor="#4E1077"
                         android:textSize="26sp"
@@ -291,7 +291,7 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-black"
                         android:gravity="left|center"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:text="@string/heartrate_result"
                         android:textColor="#4E1077"
                         android:textSize="26sp"
@@ -305,7 +305,7 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-black"
                         android:gravity="left|center"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:text="@string/color_result"
                         android:textColor="#4E1077"
                         android:textSize="26sp"
@@ -329,7 +329,7 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-black"
                         android:gravity="center"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:textColor="#4E1077"
                         android:textSize="16sp"
                         tools:ignore="VisualLintOverlap, MissingConstraints" />
@@ -342,7 +342,7 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-black"
                         android:gravity="center"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:textColor="#4E1077"
                         android:textSize="16sp"
                         tools:ignore="NestedWeights,VisualLintOverlap, MissingConstraints" />
@@ -355,7 +355,7 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-black"
                         android:gravity="center"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:textColor="#4E1077"
                         android:textSize="16sp"
                         tools:ignore="VisualLintOverlap, MissingConstraints" />
@@ -368,7 +368,7 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-black"
                         android:gravity="center"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:textColor="#4E1077"
                         android:textSize="16sp"
                         tools:ignore="VisualLintOverlap, MissingConstraints" />
@@ -381,7 +381,7 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-black"
                         android:gravity="center"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:textColor="#4E1077"
                         android:textSize="16sp"
                         tools:ignore="VisualLintOverlap, MissingConstraints" />
@@ -405,7 +405,7 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-black"
                         android:gravity="center"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:textColor="#4E1077"
                         android:textSize="16sp"
                         tools:ignore="NestedWeights,VisualLintOverlap, MissingConstraints" />
@@ -418,7 +418,7 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-black"
                         android:gravity="center"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:textColor="#4E1077"
                         android:textSize="16sp"
                         tools:ignore="VisualLintOverlap, MissingConstraints" />
@@ -431,7 +431,7 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-black"
                         android:gravity="center"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:textColor="#4E1077"
                         android:textSize="16sp"
                         tools:ignore="VisualLintOverlap, MissingConstraints" />
@@ -444,7 +444,7 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-black"
                         android:gravity="center"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:textColor="#4E1077"
                         android:textSize="16sp"
                         tools:ignore="VisualLintOverlap, MissingConstraints" />
@@ -457,7 +457,7 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-black"
                         android:gravity="center"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:textColor="#4E1077"
                         android:textSize="16sp"
                         tools:ignore="VisualLintOverlap, MissingConstraints" />
@@ -481,7 +481,7 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-black"
                         android:gravity="center"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:textColor="#4E1077"
                         android:textSize="16sp"
                         tools:ignore="NestedWeights,VisualLintOverlap, MissingConstraints" />
@@ -494,7 +494,7 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-black"
                         android:gravity="center"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:textColor="#4E1077"
                         android:textSize="16sp"
                         tools:ignore="VisualLintOverlap, MissingConstraints" />
@@ -507,7 +507,7 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-black"
                         android:gravity="center"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:textColor="#4E1077"
                         android:textSize="16sp"
                         tools:ignore="VisualLintOverlap, MissingConstraints" />
@@ -520,7 +520,7 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-black"
                         android:gravity="center"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:textColor="#4E1077"
                         android:textSize="16sp"
                         tools:ignore="VisualLintOverlap, MissingConstraints" />
@@ -533,7 +533,7 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-black"
                         android:gravity="center"
-                        android:background="@drawable/border_no_right"
+                        android:background="@drawable/border"
                         android:textColor="#4E1077"
                         android:textSize="16sp"
                         tools:ignore="VisualLintOverlap, MissingConstraints" />
@@ -554,7 +554,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="sans-serif-black"
-                    android:background="@drawable/border_no_right"
+                    android:background="@drawable/border"
                     android:textColor="#4E1077"
                     android:textSize="14sp"
                     tools:ignore="NestedWeights,VisualLintOverlap, MissingConstraints" />
