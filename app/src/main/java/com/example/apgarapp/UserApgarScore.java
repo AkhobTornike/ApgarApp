@@ -24,6 +24,15 @@ public class UserApgarScore {
     private String reflexPhase3;
     private String colorPhase3;
 
+    private String review1;
+    private String review2;
+    private String review3;
+
+    private Number score1;
+    private Number score2;
+    private Number score3;
+
+
     private UserApgarScore() {
         // Private constructor to enforce singleton pattern
     }
@@ -98,6 +107,30 @@ public class UserApgarScore {
         return colorPhase3;
     }
 
+    public String getReview1() {
+        return review1;
+    }
+
+    public String getReview2() {
+        return review2;
+    }
+
+    public String getReview3() {
+        return review3;
+    }
+
+    public Number getScore1() {
+        return score1;
+    }
+
+    public Number getScore2() {
+        return score2;
+    }
+
+    public Number getScore3() {
+        return score3;
+    }
+
     // Setters for phase 1 variables
     public void setHeartRatePhase1(String heartRatePhase1) {
         this.heartRatePhase1 = heartRatePhase1;
@@ -159,5 +192,29 @@ public class UserApgarScore {
 
     public void setColorPhase3(String colorPhase3) {
         this.colorPhase3 = colorPhase3;
+    }
+
+    public void setReview1(String review1) {
+        this.review1 = review1;
+    }
+
+    public void setReview2(String review2) {
+        this.review2 = review2;
+    }
+
+    public void setReview3(String review3) {
+        this.review3 = review3;
+    }
+
+    public void setScore1(Number score1) {
+        this.score1 = score1;
+    }
+
+    public void setScore2(Number score2) {
+        this.score2 = score2;
+    }
+
+    public void setScore3(Number score3) {
+        this.score3 = score3;
     }
 }

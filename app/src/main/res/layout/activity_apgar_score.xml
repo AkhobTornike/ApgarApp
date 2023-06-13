@@ -339,8 +339,9 @@
 
             <TextView
                 android:id="@+id/Apgar1Score"
-                android:layout_width="136.2dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/scoreRadio"
                 android:textSize="24sp"
@@ -350,38 +351,52 @@
 
             <TextView
                 android:id="@+id/Apgar2Score"
-                android:layout_width="136.2dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/scoreRadio"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="MissingConstraints" />
+
             <TextView
                 android:id="@+id/Apgar3Score"
-                android:layout_width="136.2dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
                 android:text="@string/scoreRadio"
                 android:textSize="24sp"
-                android:gravity="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@id/Apgar2Score"
                 tools:ignore="MissingConstraints" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/ShortReview"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:gravity="left|center"
+            android:text="@string/review_apgarscore"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@id/SaveButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints,RtlHardcoded" />
 
         <Button
             android:id="@+id/SaveButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="0dp"
             android:text="@string/save_button"
-            app:layout_constraintBottom_toTopOf="@+id/ApgarScores"
+            app:layout_constraintBottom_toTopOf="@id/ApgarScores"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints,VisualLintButtonSize" />
 
-
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

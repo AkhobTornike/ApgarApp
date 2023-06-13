@@ -45,6 +45,7 @@ public class ApgarScore extends AppCompatActivity {
     private int currentPhase = 1;
     private boolean isSaveEnabled = false;
 
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,6 +121,7 @@ public class ApgarScore extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private void calculateAndDisplayScore() {
         int score = calculateScore();
+        TextView Review = findViewById(R.id.ShortReview);
         if (currentPhase == 1) {
             Apgar1Score.setText("Score: " + score);
             UserApgarScore.getInstance().setHeartRatePhase1(heartRateRadios);
@@ -127,6 +129,32 @@ public class ApgarScore extends AppCompatActivity {
             UserApgarScore.getInstance().setMuscleTonePhase1(muscleToneRadios);
             UserApgarScore.getInstance().setReflexPhase1(reflexRadios);
             UserApgarScore.getInstance().setColorPhase1(colorRadios);
+            UserApgarScore.getInstance().setScore1(score);
+            if (score >= 0 && score <=2) {
+                String Review1 = "Poor";
+                UserApgarScore.getInstance().setReview1(Review1);
+                Review.setText("Review : " + Review1);
+            }
+            if ( score == 3) {
+                String Review1 = "Fair";
+                UserApgarScore.getInstance().setReview1(Review1);
+                Review.setText("Review : " + Review1);
+            }
+            if ( score >= 4 && score <= 6) {
+                String Review1 = "Normal";
+                UserApgarScore.getInstance().setReview1(Review1);
+                Review.setText("Review : " + Review1);
+            }
+            if ( score == 7) {
+                String Review1 = "Good";
+                UserApgarScore.getInstance().setReview1(Review1);
+                Review.setText("Review : " + Review1);
+            }
+            if ( score >= 8 && score <= 10) {
+                String Review1 = "Excellent";
+                UserApgarScore.getInstance().setReview1(Review1);
+                Review.setText("Review : " + Review1);
+            }
         } else if (currentPhase == 2) {
             Apgar2Score.setText("Score: " + score);
             UserApgarScore.getInstance().setHeartRatePhase2(heartRateRadios);
@@ -134,6 +162,32 @@ public class ApgarScore extends AppCompatActivity {
             UserApgarScore.getInstance().setMuscleTonePhase2(muscleToneRadios);
             UserApgarScore.getInstance().setReflexPhase2(reflexRadios);
             UserApgarScore.getInstance().setColorPhase2(colorRadios);
+            UserApgarScore.getInstance().setScore2(score);
+            if (score >= 0 && score <=2) {
+                String Review2 = "Poor";
+                UserApgarScore.getInstance().setReview2(Review2);
+                Review.setText("Review : " + Review2);
+            }
+            if ( score == 3) {
+                String Review2 = "Fair";
+                UserApgarScore.getInstance().setReview2(Review2);
+                Review.setText("Review : " + Review2);
+            }
+            if ( score >= 4 && score <= 6) {
+                String Review2 = "Normal";
+                UserApgarScore.getInstance().setReview2(Review2);
+                Review.setText("Review : " + Review2);
+            }
+            if ( score == 7) {
+                String Review2 = "Good";
+                UserApgarScore.getInstance().setReview2(Review2);
+                Review.setText("Review : " + Review2);
+            }
+            if ( score >= 8 && score <= 10) {
+                String Review2 = "Excellent";
+                UserApgarScore.getInstance().setReview2(Review2);
+                Review.setText("Review : " + Review2);
+            }
         } else if (currentPhase == 3) {
             Apgar3Score.setText("Score: " + score);
             UserApgarScore.getInstance().setHeartRatePhase3(heartRateRadios);
@@ -141,6 +195,32 @@ public class ApgarScore extends AppCompatActivity {
             UserApgarScore.getInstance().setMuscleTonePhase3(muscleToneRadios);
             UserApgarScore.getInstance().setReflexPhase3(reflexRadios);
             UserApgarScore.getInstance().setColorPhase3(colorRadios);
+            UserApgarScore.getInstance().setScore3(score);
+            if (score >= 0 && score <=2) {
+                String Review3 = "Poor";
+                UserApgarScore.getInstance().setReview3(Review3);
+                Review.setText("Review : " + Review3);
+            }
+            if ( score == 3) {
+                String Review3 = "Fair";
+                UserApgarScore.getInstance().setReview3(Review3);
+                Review.setText("Review : " + Review3);
+            }
+            if ( score >= 4 && score <= 6) {
+                String Review3 = "Normal";
+                UserApgarScore.getInstance().setReview3(Review3);
+                Review.setText("Review : " + Review3);
+            }
+            if ( score == 7) {
+                String Review3 = "Good";
+                UserApgarScore.getInstance().setReview3(Review3);
+                Review.setText("Review : " + Review3);
+            }
+            if ( score >= 8 && score <= 10) {
+                String Review3 = "Excellent";
+                UserApgarScore.getInstance().setReview3(Review3);
+                Review.setText("Review : " + Review3);
+            }
         }
 
     }

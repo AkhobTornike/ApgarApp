@@ -33,4 +33,8 @@
     <string name="_1">1</string>
     <string name="_2">2</string>
     <string name="_3">3</string>
+    <string name="review_apgarscore">Review :</string>
+    <string name="phase_Result">Phase</string>
+    <string name="score_result">Score</string>
+    <string name="review_result">Review</string>
 </resources>
