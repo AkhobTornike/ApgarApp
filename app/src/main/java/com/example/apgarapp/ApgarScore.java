@@ -284,9 +284,9 @@ public class ApgarScore extends AppCompatActivity {
         return score;
     }
     private void startTimer() {
-        long totalDuration = 2 * 60 * 1000; // 2 min
-        long phase1Interval = 60 * 1000 + 30 * 1000; // 9 min
-        long phase2Interval = 60 * 1000; // 6 min
+        long totalDuration = 10 * 60 * 1000; // 10 min
+        long phase1Interval = 7 * 60 * 1000; // 7 min
+        long phase2Interval = 4 * 60 * 1000; // 4 min
         long toastDuration = 10 * 1000;
 
         CountDownTimer timer = new CountDownTimer(totalDuration, 1000) {

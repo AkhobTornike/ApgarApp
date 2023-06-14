@@ -1,9 +1,12 @@
 package com.example.apgarapp;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +17,12 @@ public class Result extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         ScrollView scrollView = findViewById(R.id.scrollView);
+
+        Button SaveButton = findViewById(R.id.SaveButton);
+        SaveButton.setOnClickListener(v -> {
+                Intent intent = new Intent(Result.this, MainActivity.class);
+                startActivity(intent);
+        });
 
         // Enable scrolling for the ScrollView
         scrollView.setScrollContainer(true);
